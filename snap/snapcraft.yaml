@@ -1,0 +1,29 @@
+
+name: gif-for-cli # check to see if it's available
+version: '1.0+git' # this is freakin' awesome
+summary: GIF's in the terminal # 79 char long summary
+description: |
+  You know you've always wanted this.
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs
+
+apps:
+  gif-for-cli:
+    command: gif-for-cli
+    plugs:
+      - home
+      - network
+      - network-bind
+     
+parts: 
+  my-part:
+    source: https://github.com/google/gif-for-cli
+    source-type: git
+    plugin: python
+    python-version: python3
+    
+    build-packages:
+      - python3
+      
+    stage-packages:
+      - python3
