@@ -1,6 +1,6 @@
 
 name: gif-for-cli # check to see if it's available
-version: '1.1+git' # this is freakin' awesome
+version: '1.2+git' # this is freakin' awesome
 summary: GIF's in the terminal # 79 char long summary
 description: |
   You know you've always wanted this.
@@ -31,3 +31,8 @@ parts:
       - zlib1g
       - libjpeg8
       - python3-setuptools
+
+  publish:
+    plugin: copy
+    files:
+      ./gif-for-cli: bin/gif-for-cli
